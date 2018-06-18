@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53D67D69ACD8B0FE68A46EF8 /* Pods_SunAndSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2588026FC1A27CBB3AEB71AD /* Pods_SunAndSet.framework */; };
 		CE0E862B20D2842000629F70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E862A20D2842000629F70 /* AppDelegate.swift */; };
 		CE0E862D20D2842000629F70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E862C20D2842000629F70 /* ViewController.swift */; };
 		CE0E863020D2842000629F70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0E862E20D2842000629F70 /* Main.storyboard */; };
 		CE0E863220D2842400629F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0E863120D2842400629F70 /* Assets.xcassets */; };
 		CE0E863520D2842400629F70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0E863320D2842400629F70 /* LaunchScreen.storyboard */; };
+		CE0E864320D28A6000629F70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E864220D28A6000629F70 /* Extensions.swift */; };
+		CE0E864520D28A7A00629F70 /* Defualts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E864420D28A7A00629F70 /* Defualts.swift */; };
+		CE0E864720D28A9F00629F70 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E864620D28A9F00629F70 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2588026FC1A27CBB3AEB71AD /* Pods_SunAndSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunAndSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D3D46FD4B3AAEEC13BDC0E1 /* Pods-SunAndSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunAndSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-SunAndSet/Pods-SunAndSet.release.xcconfig"; sourceTree = "<group>"; };
+		B69E99ACF1510699FFBAD202 /* Pods-SunAndSet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunAndSet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SunAndSet/Pods-SunAndSet.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0E862720D2842000629F70 /* SunAndSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunAndSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0E862A20D2842000629F70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0E862C20D2842000629F70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,9 @@
 		CE0E863120D2842400629F70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0E863420D2842400629F70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0E863620D2842400629F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0E864220D28A6000629F70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CE0E864420D28A7A00629F70 /* Defualts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defualts.swift; sourceTree = "<group>"; };
+		CE0E864620D28A9F00629F70 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D67D69ACD8B0FE68A46EF8 /* Pods_SunAndSet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211298508D9E72AEE730FD70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B69E99ACF1510699FFBAD202 /* Pods-SunAndSet.debug.xcconfig */,
+				4D3D46FD4B3AAEEC13BDC0E1 /* Pods-SunAndSet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7A7408F826E9F6BDBFCA014E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2588026FC1A27CBB3AEB71AD /* Pods_SunAndSet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE0E861E20D2842000629F70 = {
 			isa = PBXGroup;
 			children = (
 				CE0E862920D2842000629F70 /* SunAndSet */,
 				CE0E862820D2842000629F70 /* Products */,
+				211298508D9E72AEE730FD70 /* Pods */,
+				7A7408F826E9F6BDBFCA014E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +84,12 @@
 		CE0E862920D2842000629F70 /* SunAndSet */ = {
 			isa = PBXGroup;
 			children = (
+				CE0E864120D288EA00629F70 /* Services */,
+				CE0E864020D288B700629F70 /* Fonts */,
+				CE0E863F20D2885400629F70 /* Controller */,
+				CE0E863E20D2882600629F70 /* Resources */,
+				CE0E863D20D287D300629F70 /* Model */,
+				CE0E863C20D2878300629F70 /* Helper */,
 				CE0E862A20D2842000629F70 /* AppDelegate.swift */,
 				CE0E862C20D2842000629F70 /* ViewController.swift */,
 				CE0E862E20D2842000629F70 /* Main.storyboard */,
@@ -64,6 +100,51 @@
 			path = SunAndSet;
 			sourceTree = "<group>";
 		};
+		CE0E863C20D2878300629F70 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E864220D28A6000629F70 /* Extensions.swift */,
+				CE0E864420D28A7A00629F70 /* Defualts.swift */,
+				CE0E864620D28A9F00629F70 /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CE0E863D20D287D300629F70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE0E863E20D2882600629F70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE0E863F20D2885400629F70 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE0E864020D288B700629F70 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE0E864120D288EA00629F70 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE0E863920D2842400629F70 /* Build configuration list for PBXNativeTarget "SunAndSet" */;
 			buildPhases = (
+				11F84A2E116BCA6442E91FCB /* [CP] Check Pods Manifest.lock */,
 				CE0E862320D2842000629F70 /* Sources */,
 				CE0E862420D2842000629F70 /* Frameworks */,
 				CE0E862520D2842000629F70 /* Resources */,
+				7B6C38BBB3D9D2A12C302B12 /* [CP] Embed Pods Frameworks */,
+				310099FCB37F5201260EDDAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,12 +214,88 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11F84A2E116BCA6442E91FCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SunAndSet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		310099FCB37F5201260EDDAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SunAndSet/Pods-SunAndSet-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SunAndSet/Pods-SunAndSet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B6C38BBB3D9D2A12C302B12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SunAndSet/Pods-SunAndSet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SunAndSet/Pods-SunAndSet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE0E862320D2842000629F70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0E864720D28A9F00629F70 /* Constants.swift in Sources */,
 				CE0E862D20D2842000629F70 /* ViewController.swift in Sources */,
+				CE0E864520D28A7A00629F70 /* Defualts.swift in Sources */,
+				CE0E864320D28A6000629F70 /* Extensions.swift in Sources */,
 				CE0E862B20D2842000629F70 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +438,7 @@
 		};
 		CE0E863A20D2842400629F70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B69E99ACF1510699FFBAD202 /* Pods-SunAndSet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +457,7 @@
 		};
 		CE0E863B20D2842400629F70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D3D46FD4B3AAEEC13BDC0E1 /* Pods-SunAndSet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
