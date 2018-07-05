@@ -22,14 +22,37 @@ class FavoriteVC: MainViewController,UITableViewDataSource,UITableViewDelegate{
             getFavouriteByUserData()
         }
     }
+    func showEmptyFavouriteView(){
+        _ = UINib.init(nibName: "favPlaceholder", bundle: nil)
+        //self.view.register(nib, forCellReuseIdentifier: "SupViewConnectUs")
+        let rootView = Bundle.main.loadNibNamed("NoAds", owner: self, options: nil)?[0] as? NoAds
+        rootView?.LblResult.text = "No Favourites"
+        rootView?.ImageNo.image = UIImage(named: "offersPlaceholder")
+        if let aView = rootView {
+            aView.tag = 100
+            self.view.addSubview(aView)
+            aView.translatesAutoresizingMaskIntoConstraints = false
+            aView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+            aView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+            aView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+            aView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+            
+        }
+    }
     var isLoading: Bool = false
     func getFavouriteByUserData(){
         guard !isLoading else { return }
         isLoading = true
         showLoading()
         FavouriteService.getFavouriteByUserId{ (error: String?,success: Bool,favs:[advertiseModel.Cate]?)in
-            if let error = error{self.hideLoading()
-                self.alertUser(title: "", message: error )
+            if let error = error{
+                self.hideLoading()
+                if error == "EmptyData"{
+                    self.showEmptyFavouriteView()
+                    
+                }
+                else{
+                    self.alertUser(title: "", message: error )}
                 return
                 
             }

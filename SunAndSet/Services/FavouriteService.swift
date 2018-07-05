@@ -62,7 +62,7 @@ class FavouriteService: NSObject {
                         let CatPro = userData.data
                         // let CatPro = userData.
                         if CatPro.count == 0{
-                            completion("NoProductsFound",false, nil)
+                            completion("EmptyData",false, nil)
                             return
                         }
                         print(CatPro,"CatPro")

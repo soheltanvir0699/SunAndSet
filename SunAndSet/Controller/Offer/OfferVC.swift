@@ -80,12 +80,13 @@ class OfferVC: MainViewController,UICollectionViewDataSource,UICollectionViewDel
                 self.hideLoading()
                 if error == "EmptyData"{
                     self.showEmptyOfferView()
-                return
+               
                     }
                 else{
              self.alertUser(title: "", message: error )
                     
                 }
+                 return
             }
             print("success5")
             if let offer = offers{

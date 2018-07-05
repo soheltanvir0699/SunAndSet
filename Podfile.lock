@@ -1,0 +1,73 @@
+PODS:
+  - Alamofire (4.7.2)
+  - DLRadioButton (1.4.12)
+  - DropDown (2.3.2)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - ImageSlideshow (1.6.1):
+    - ImageSlideshow/Core (= 1.6.1)
+  - ImageSlideshow/Core (1.6.1)
+  - ImageSlideshow/SDWebImage (1.6.1):
+    - ImageSlideshow/Core
+    - SDWebImage (< 5.0, >= 3.7)
+  - IQKeyboardManagerSwift (6.0.4)
+  - Kingfisher (4.8.0)
+  - LGButton (1.0.5)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+  - SkyFloatingLabelTextField (3.5.1)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - DLRadioButton (~> 1.4)
+  - DropDown
+  - GoogleMaps
+  - GooglePlaces
+  - ImageSlideshow
+  - ImageSlideshow/SDWebImage
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - LGButton
+  - SDWebImage
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - DLRadioButton
+    - DropDown
+    - GoogleMaps
+    - GooglePlaces
+    - ImageSlideshow
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - LGButton
+    - SDWebImage
+    - SkyFloatingLabelTextField
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  ImageSlideshow: f0f33e1a20668e83d77f5fb7729e4ae4437c0759
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  LGButton: 707ce916eb80b73a6c4688df34bee11adbafb663
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: d886ffc1c493d024cbdd9d306e37648d7a5e66d0
+
+COCOAPODS: 1.5.3
