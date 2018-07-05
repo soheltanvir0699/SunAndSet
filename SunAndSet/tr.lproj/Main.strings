@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "07z-e0-hnL"; */
+"07z-e0-hnL.normalTitle" = "Sign up";
+
+/* Class = "UITextField"; placeholder = "الاسم الاول "; ObjectID = "l96-FQ-A6m"; */
+"l96-FQ-A6m.placeholder" = "الاسم الاول ";
+
+/* Class = "UITextField"; placeholder = "PHONE OR EMAIL"; ObjectID = "psx-cK-vPh"; */
+"psx-cK-vPh.placeholder" = "PHONE OR EMAIL";

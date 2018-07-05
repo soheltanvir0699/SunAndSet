@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        CustomeFont()
+       initNavigationController()
+        // Keyboard Custimize
+        //IQKeyboardManager.shared.en
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.keyboardDistanceFromTextField=50.0
+        IQKeyboardManager.shared.shouldResignOnTouchOutside=true
         // Override point for customization after application launch.
         return true
     }
@@ -41,6 +48,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+// functions Help
+    func CustomeFont(){
+     //  UILabel.appearance().font = UIFont(name: "OpenSans-Regular", size: 4)
+        
+      // UILabel.appearance().substituteFontName = "OpenSans"
+        UIButton.appearance().titleLabel?.font = UIFont.OpenSansSemiBold(size: 15)
+    }
+    func initNavigationController(){
+       UINavigationBar.appearance().barTintColor = UIColor(red:255, green:255, blue:255, alpha:1.0)
+        let attributes = [
+                       NSAttributedStringKey.foregroundColor : UIColor.black,
+                      NSAttributedStringKey.font : UIFont.OpenSansBold(size: 18)
+                  ]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
+        let barItemAttributes = [
+            NSAttributedStringKey.foregroundColor : UIColor.darkGray,
+            NSAttributedStringKey.font : UIFont.OpenSansBold(size: 16)
+        ]
+      
+        UINavigationBar.appearance().backItem?.title = ""
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "back_nav")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "back_nav")
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UIBarButtonItem.appearance().setTitleTextAttributes(barItemAttributes, for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes(barItemAttributes, for: .highlighted)
+        if #available(iOS 11.0, *) {
+            UINavigationBar.appearance().largeTitleTextAttributes =
+                [NSAttributedStringKey.foregroundColor: UIColor.black,
+                 NSAttributedStringKey.font: UIFont.OpenSansBold(size: 32)]
+        } else {
+            // Fallback on earlier versions
+        }
+    }
 }
 
