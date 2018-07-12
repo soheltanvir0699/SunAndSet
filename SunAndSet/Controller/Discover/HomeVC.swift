@@ -11,6 +11,7 @@ import ImageSlideshow
 import Kingfisher
 import SDWebImage
 class HomeVC: MainViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    var IsFoundError = false
     var CategoriesData = [HomeModel.Cate]()
     var SliderData = [HomeModel.image]()
      @IBOutlet weak var ViewSliderBanner: ImageSlideshow!
@@ -38,13 +39,14 @@ class HomeVC: MainViewController,UICollectionViewDataSource,UICollectionViewDele
         showLoading()
         CategoeryService.getHomeData{ (error: String?,success: Bool,cats:[HomeModel.Cate]?,sliders:[HomeModel.image]?)in
             if let error = error{self.hideLoading()
+                self.IsFoundError=true
                 self.alertUser(title: "", message: error )
                 return
                 
             }
             print("success5")
             if let cate = cats{
-               
+                self.IsFoundError=false
                 self.CategoriesData.append(contentsOf: cate)
                
                
@@ -68,24 +70,12 @@ class HomeVC: MainViewController,UICollectionViewDataSource,UICollectionViewDele
             
         }}
         
-        
-    override func viewDidAppear(_ animated: Bool) {
-        //HieghtOfCollectionSamePro
-        print("as")
-        //HieghtOfCollectionCat.constant = 1000
+    override func viewWillAppear(_ animated: Bool) {
+        //user Not login
+        if   IsFoundError==true{
+           getHomeData()
+        }
     }
-//    override func viewDidDisappear(_ animated: Bool) {
-//        HieghtOfCollectionCat.constant = self.CollectionViewCat.contentSize.height
-//    }
-//    override func viewDidLayoutSubviews() {
-//         HieghtOfCollectionCat.constant = self.CollectionViewCat.contentSize.height
-//    }
-//    override func viewWillAppear(_ animated: Bool) {
-//          HieghtOfCollectionCat.constant = self.CollectionViewCat.contentSize.height
-//    }
-//    override func viewWillLayoutSubviews() {
-//        HieghtOfCollectionCat.constant = self.CollectionViewCat.contentSize.height
-//    }
     //view
     func CustomeImageSlideshow(){
         ViewSliderBanner.backgroundColor = UIColor.white

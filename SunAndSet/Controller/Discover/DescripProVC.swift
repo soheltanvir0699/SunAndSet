@@ -69,6 +69,7 @@ class DescripProVC: UIViewController {
         else{lblDesOwner.text = "Posted this product on "}
         lblDescrip.text = SingelItem?.name
        ImageOwener.addImage(withImage: nil, andPlaceHolder: "Placeholder")
+        print(SingelItem,"SingelItem")
         lblLocation.text = (SingelItem?.area.name)!+" , " + (SingelItem?.city.name)!
         NotificationCenter.default.addObserver(self, selector: #selector(self.dismissSupView), name: NSNotification.Name(rawValue:"dismissSupView"), object: nil)
        CustomeImageSlideshow()
@@ -147,7 +148,9 @@ class DescripProVC: UIViewController {
     @IBAction func BtnGotoOwenerDetails(_ sender: UIButton) {
         
         let userId = SingelItem?.user.id
-        RootView.toProductVC(withVC: self, title:  lblNameOwner.text!,UserId:userId! )
+         let userName = SingelItem?.user.name
+        RootView.toListOffAdsUsersVC(withVC: self, title: userName!, UserID: userId!)
+       
         
        
     }

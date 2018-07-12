@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+var CategoryName = ""
+var SupCategoryName = ""
 class CreateAdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var tableViewHieght: NSLayoutConstraint!
     @IBOutlet weak var tableview: UITableView!
@@ -16,8 +17,13 @@ class CreateAdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //RootView.toLoginVC(withVC: self, title: "Login")
-        
-   
+          navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        if UsersDefault.userIsLogged==true{
+        self.navigationItem.title = "Create Ad"
+        tableview.tableFooterView = UIView()
+        let nib = UINib.init(nibName: "SupCat", bundle: nil)
+        self.tableview.register(nib, forCellReuseIdentifier: "SupCatCell")
+            getAllCatData()}
 }
     override func viewWillAppear(_ animated: Bool) {
         //user Not login
@@ -25,13 +31,7 @@ class CreateAdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(GotoHome))
             RootView.toNotLoginVC(withVC: self)
     }
-        else{
-            self.navigationItem.title = "Create Ad"
-            tableview.tableFooterView = UIView()
-            let nib = UINib.init(nibName: "SupCat", bundle: nil)
-            self.tableview.register(nib, forCellReuseIdentifier: "SupCatCell")
-            getAllCatData()
-        }
+        
     }
      @objc func GotoHome(){
         print("om3")
@@ -87,6 +87,7 @@ class CreateAdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let indexPath = collectionView.indexPathsForSelectedItems
         let CatId = AllCateData[indexPath.row].id
+        CategoryName=AllCateData[indexPath.row].name
          RootView.toSubcategoryVC(withVC: self, title: "Create Ad",CatId:CatId)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

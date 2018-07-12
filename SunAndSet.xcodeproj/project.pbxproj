@@ -46,6 +46,9 @@
 		CE46325920DBC8B500BBB4DA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46325820DBC8B500BBB4DA /* RootView.swift */; };
 		CE46325B20DBF7A600BBB4DA /* SupViewConnectUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE46325A20DBF7A600BBB4DA /* SupViewConnectUs.xib */; };
 		CE46325D20DBFBD300BBB4DA /* SupViewConnectUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46325C20DBFBD300BBB4DA /* SupViewConnectUs.swift */; };
+		CE6A3DA120F3D61B00FFADAB /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A3DA020F3D61B00FFADAB /* PhotoCell.swift */; };
+		CE6A3DA320F3EB0200FFADAB /* AdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A3DA220F3EB0200FFADAB /* AdsService.swift */; };
+		CE6A3DA520F3F27E00FFADAB /* NoEnternet.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6A3DA420F3F27E00FFADAB /* NoEnternet.xib */; };
 		CE87135120D8E72E00A8A980 /* AuthenticationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87135020D8E72E00A8A980 /* AuthenticationStoryboard.storyboard */; };
 		CE87135720D8E91500A8A980 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE87135920D8E91500A8A980 /* Localizable.strings */; };
 		CE87136220D8F23000A8A980 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE87135D20D8F22F00A8A980 /* OpenSans-Regular.ttf */; };
@@ -68,6 +71,8 @@
 		CEA70F1120E37A7000C73A1B /* NotLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA70F1020E37A7000C73A1B /* NotLogin.xib */; };
 		CEA70F1520E3803600C73A1B /* NotLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA70F1420E3803600C73A1B /* NotLoginVC.swift */; };
 		CEA70F1720E3D09A00C73A1B /* advertiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA70F1620E3D09A00C73A1B /* advertiseModel.swift */; };
+		CEC00FF720F4AC15002A3216 /* LogOut.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC00FF620F4AC15002A3216 /* LogOut.xib */; };
+		CEC00FF920F4AFC4002A3216 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC00FF820F4AFC4002A3216 /* LogOut.swift */; };
 		CECFA17620E25EA100C33F92 /* SupCatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFA17520E25EA100C33F92 /* SupCatModel.swift */; };
 		CECFA17820E2798400C33F92 /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFA17720E2798400C33F92 /* ForgetPassword.swift */; };
 		CED7620320E4E67D004CC423 /* RequestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7620220E4E67D004CC423 /* RequestComponent.swift */; };
@@ -121,6 +126,9 @@
 		CE46325820DBC8B500BBB4DA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CE46325A20DBF7A600BBB4DA /* SupViewConnectUs.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupViewConnectUs.xib; sourceTree = "<group>"; };
 		CE46325C20DBFBD300BBB4DA /* SupViewConnectUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupViewConnectUs.swift; sourceTree = "<group>"; };
+		CE6A3DA020F3D61B00FFADAB /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		CE6A3DA220F3EB0200FFADAB /* AdsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsService.swift; sourceTree = "<group>"; };
+		CE6A3DA420F3F27E00FFADAB /* NoEnternet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoEnternet.xib; sourceTree = "<group>"; };
 		CE87135020D8E72E00A8A980 /* AuthenticationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationStoryboard.storyboard; sourceTree = "<group>"; };
 		CE87135820D8E91500A8A980 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE87135A20D8E98000A8A980 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 		CEA70F1020E37A7000C73A1B /* NotLogin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotLogin.xib; sourceTree = "<group>"; };
 		CEA70F1420E3803600C73A1B /* NotLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLoginVC.swift; sourceTree = "<group>"; };
 		CEA70F1620E3D09A00C73A1B /* advertiseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = advertiseModel.swift; sourceTree = "<group>"; };
+		CEC00FF620F4AC15002A3216 /* LogOut.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOut.xib; sourceTree = "<group>"; };
+		CEC00FF820F4AFC4002A3216 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
 		CECFA17520E25EA100C33F92 /* SupCatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupCatModel.swift; sourceTree = "<group>"; };
 		CECFA17720E2798400C33F92 /* ForgetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
 		CED7620220E4E67D004CC423 /* RequestComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestComponent.swift; sourceTree = "<group>"; };
@@ -187,6 +197,8 @@
 		CE039FE320E0DDA200C728FD /* PopUps */ = {
 			isa = PBXGroup;
 			children = (
+				CEC00FF620F4AC15002A3216 /* LogOut.xib */,
+				CEC00FF820F4AFC4002A3216 /* LogOut.swift */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -196,9 +208,9 @@
 			children = (
 				CE039FE520E0DEE100C728FD /* LoginVC.swift */,
 				CE039FE720E1086200C728FD /* RegisterVC.swift */,
-				CE039FF520E12B4500C728FD /* ChangePasswordVC.swift */,
 				CE039FF720E156EA00C728FD /* EditProfileVC.swift */,
 				CECFA17720E2798400C33F92 /* ForgetPassword.swift */,
+				CE039FF520E12B4500C728FD /* ChangePasswordVC.swift */,
 			);
 			path = ModelAuthentication;
 			sourceTree = "<group>";
@@ -231,8 +243,8 @@
 				CE0E864020D288B700629F70 /* Fonts */,
 				CE0E863F20D2885400629F70 /* Controller */,
 				CE0E863E20D2882600629F70 /* Resources */,
-				CE0E863D20D287D300629F70 /* Model */,
 				CE0E863C20D2878300629F70 /* Helper */,
+				CE0E863D20D287D300629F70 /* Model */,
 				CE0E862A20D2842000629F70 /* AppDelegate.swift */,
 				CE0E862C20D2842000629F70 /* ViewController.swift */,
 				CE0E862E20D2842000629F70 /* Main.storyboard */,
@@ -246,11 +258,11 @@
 		CE0E863C20D2878300629F70 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				CE2F287A20DA6FFF008E6F1F /* Helper.swift */,
 				CED7620220E4E67D004CC423 /* RequestComponent.swift */,
 				CE0E864220D28A6000629F70 /* Extensions.swift */,
 				CE0E864420D28A7A00629F70 /* Defualts.swift */,
 				CE0E864620D28A9F00629F70 /* Constants.swift */,
-				CE2F287A20DA6FFF008E6F1F /* Helper.swift */,
 				CE46325820DBC8B500BBB4DA /* RootView.swift */,
 				CE2178B320EA468B00E3EF73 /* UsersDefault.swift */,
 				CEDC735820EE32C8005AD290 /* DesinableView.swift */,
@@ -316,6 +328,7 @@
 				CED7620420E4E7A1004CC423 /* AuthenticationService.swift */,
 				CE2178BD20EA93F400E3EF73 /* OffersService.swift */,
 				CE1643EB20ECE16200797BBF /* FavouriteService.swift */,
+				CE6A3DA220F3EB0200FFADAB /* AdsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -369,6 +382,14 @@
 			path = Discover;
 			sourceTree = "<group>";
 		};
+		CE6A3D9F20F3D5E800FFADAB /* CreatAd */ = {
+			isa = PBXGroup;
+			children = (
+				CE6A3DA020F3D61B00FFADAB /* PhotoCell.swift */,
+			);
+			path = CreatAd;
+			sourceTree = "<group>";
+		};
 		CE87134F20D8E6E800A8A980 /* ModelAuthentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,9 +409,11 @@
 		CE87137120D9399B00A8A980 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A3D9F20F3D5E800FFADAB /* CreatAd */,
 				CE2178B520EA734600E3EF73 /* Offer */,
 				CE039FE320E0DDA200C728FD /* PopUps */,
 				CE2F287F20DA8347008E6F1F /* Discover */,
+				CE6A3DA420F3F27E00FFADAB /* NoEnternet.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -471,8 +494,10 @@
 				CE0E863520D2842400629F70 /* LaunchScreen.storyboard in Resources */,
 				CE46325B20DBF7A600BBB4DA /* SupViewConnectUs.xib in Resources */,
 				CE87136520D8F23000A8A980 /* OpenSans-ExtraBold.ttf in Resources */,
+				CEC00FF720F4AC15002A3216 /* LogOut.xib in Resources */,
 				CE87136420D8F23000A8A980 /* OpenSans-Bold.ttf in Resources */,
 				CE87136320D8F23000A8A980 /* OpenSans-SemiBold.ttf in Resources */,
+				CE6A3DA520F3F27E00FFADAB /* NoEnternet.xib in Resources */,
 				CE0E863220D2842400629F70 /* Assets.xcassets in Resources */,
 				CEA70F1120E37A7000C73A1B /* NotLogin.xib in Resources */,
 				CE9D781720DFC94D00626D2B /* NoAds.xib in Resources */,
@@ -591,6 +616,7 @@
 				CE46325D20DBFBD300BBB4DA /* SupViewConnectUs.swift in Sources */,
 				CE46325920DBC8B500BBB4DA /* RootView.swift in Sources */,
 				CE039FE620E0DEE100C728FD /* LoginVC.swift in Sources */,
+				CE6A3DA320F3EB0200FFADAB /* AdsService.swift in Sources */,
 				CE9D781920DFF07300626D2B /* ListOffAdsUsersVC.swift in Sources */,
 				CEDC735920EE32C8005AD290 /* DesinableView.swift in Sources */,
 				CE2178B220EA419600E3EF73 /* User.swift in Sources */,
@@ -602,6 +628,7 @@
 				CEFF630B20EE452B00684D1F /* DetailsCreateAdVC.swift in Sources */,
 				CE2F288520DA8A96008E6F1F /* SupCatCell.swift in Sources */,
 				CE1643F020ED598C00797BBF /* CreateAddModel.swift in Sources */,
+				CE6A3DA120F3D61B00FFADAB /* PhotoCell.swift in Sources */,
 				CED7620320E4E67D004CC423 /* RequestComponent.swift in Sources */,
 				CE039FEC20E1132000C728FD /* HomeModel.swift in Sources */,
 				CECFA17620E25EA100C33F92 /* SupCatModel.swift in Sources */,
@@ -613,6 +640,7 @@
 				CE87136C20D8FAE800A8A980 /* CreateAdVC.swift in Sources */,
 				CEDC735B20EE40C9005AD290 /* ChoosePhotoVC.swift in Sources */,
 				CE0E864320D28A6000629F70 /* Extensions.swift in Sources */,
+				CEC00FF920F4AFC4002A3216 /* LogOut.swift in Sources */,
 				CE0E862B20D2842000629F70 /* AppDelegate.swift in Sources */,
 				CE46325620DBB6D300BBB4DA /* ProductCell.swift in Sources */,
 				CEA70F1720E3D09A00C73A1B /* advertiseModel.swift in Sources */,

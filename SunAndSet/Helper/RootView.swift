@@ -23,10 +23,10 @@ class RootView: NSObject {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! ChoosePhotoVC
         destination.title =  title
+           destination.hidesBottomBarWhenPushed = true
         vc.navigationController?.pushViewController(destination, animated: true)
     }
     class func toProductVC(withVC vc: UIViewController,title:String,SupCat:Int){
-        // this remove the navigation controll in order to clean the view hierarchy but there is still an error not solved yet
         let StoryBoardID = Constants.StoryBoardViewControllersIDs.ProductVC
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! ProductVC
@@ -34,13 +34,19 @@ class RootView: NSObject {
         destination.SupCatId = SupCat
         vc.navigationController?.pushViewController(destination, animated: true)
     }
+    class func toDetailsCreateAdVC(withVC vc: UIViewController,title:String){
+        let StoryBoardID = Constants.StoryBoardViewControllersIDs.DetailsCreateAdVC
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! DetailsCreateAdVC
+        destination.title =  title
+        vc.navigationController?.pushViewController(destination, animated: true)
+    }
     class func toProductVC(withVC vc: UIViewController,title:String,UserId:Int){
-        // this remove the navigation controll in order to clean the view hierarchy but there is still an error not solved yet
         let StoryBoardID = Constants.StoryBoardViewControllersIDs.ProductVC
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! ProductVC
         destination.title =  title
-        destination.UserId = UserId
+        destination.SupCatId = UserId
         vc.navigationController?.pushViewController(destination, animated: true)
     }
     class func toDescripProVC(withVC vc: UIViewController,title:String){
@@ -50,12 +56,14 @@ class RootView: NSObject {
         let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! DescripProVC
         destination.title =  title
         vc.navigationController?.pushViewController(destination, animated: true)
+        
     }
-    class func toListOffAdsUsersVC(withVC vc: UIViewController,title:String){
+    class func toListOffAdsUsersVC(withVC vc: UIViewController,title:String,UserID:Int){
         // this remove the navigation controll in order to clean the view hierarchy but there is still an error not solved yet
         let StoryBoardID = Constants.StoryBoardViewControllersIDs.ListOffAdsUsersVC
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! ListOffAdsUsersVC
+        destination.UserId=UserID
         destination.title =  title
         vc.navigationController?.pushViewController(destination, animated: true)
     }

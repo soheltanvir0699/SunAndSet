@@ -25,7 +25,7 @@ class CategoeryService: NSObject {
                 switch response.result
                 {
                 case .failure(let error):
-                    completion("error",false, nil,nil)
+                    completion(error.localizedDescription,false, nil,nil)
                     print(error,"error")
                     
                 case .success:
@@ -62,7 +62,7 @@ class CategoeryService: NSObject {
                 switch response.result
                 {
                 case .failure(let error):
-                    completion("error",false, nil)
+                    completion(error.localizedDescription,false, nil)
                     print(error,"error")
                     
                 case .success:
@@ -83,54 +83,6 @@ class CategoeryService: NSObject {
                         print(error)
                         
                         completion(nil,false, nil)
-                    }
-                }
-        }}
-    class func getProById(parameterKey:String,Id:Int, completion: @escaping (_ error: String?,_ success: Bool, _ CapPro: [advertiseModel.Cate]?,_ Slider: [advertiseModel.slider]?)->Void)  {
-
-        let url = Constants.Urls.CatPro
-        //print(url)
-        let parameters: [String: Any] = [
-
-            parameterKey: Id,
-            
-
-        ]
-        let headers: HTTPHeaders = [
-            "lang": "1"
-        ]
-        print(parameters,"parameters")
-        Alamofire.request(url, method: .get, parameters:parameters, encoding: URLEncoding.default, headers: headers)
-            //.validate(statusCode: 200..<300)
-            
-            .responseJSON { response in
- print(url)
-                switch response.result
-                {
-                case .failure(let error):
-                    completion("error",false, nil,nil)
-                    print(error,"error")
-
-                case .success:
-                    let jsonData = response.data
-                    do{print(response.data!)
-                        let userData = try JSONDecoder().decode(advertiseModel.self, from: jsonData!)
-                        let CatPro = userData.data
-                        let SliderImage = userData.slider
-                       // let CatPro = userData.
-                        if CatPro.count == 0{
-                            completion("NoProductsFound",false, nil,nil)
-                            return
-                        }
-                        print(CatPro,"CatPro")
-
-                        completion(nil,true, CatPro,SliderImage)
-                    }
-                    catch{
-                        print("************************")
-                        print(error)
-
-                        completion(nil,false, nil,nil)
                     }
                 }
         }}

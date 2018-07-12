@@ -30,7 +30,7 @@
                                 <constraint firstAttribute="width" constant="86" id="ggl-hd-K9w"/>
                                 <constraint firstAttribute="height" constant="34" id="mvx-Rk-lDL"/>
                             </constraints>
-                            <state key="normal" title="Log in">
+                            <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
@@ -61,7 +61,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-va-YMd">
                             <rect key="frame" x="149.5" y="143" width="42" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.50588235294117645" green="0.39654624819574241" blue="0.32960011506955922" alpha="0.34302761130136988" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.44201505184173584" green="0.47814714908599854" blue="0.50320982933044434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>

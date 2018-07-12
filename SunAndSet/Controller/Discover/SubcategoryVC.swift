@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var New = -1
 class SubcategoryVC: UIViewController,UITableViewDataSource,UITableViewDelegate  {
     
     @IBOutlet weak var tableViewHieght: NSLayoutConstraint!
@@ -16,6 +16,7 @@ class SubcategoryVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
     var SupCatData = [SupCatModel.Cate]()
     override func viewDidLoad() {
         super.viewDidLoad()
+          navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 tableview.tableFooterView = UIView()
         let nib = UINib.init(nibName: "SupCat", bundle: nil)
         self.tableview.register(nib, forCellReuseIdentifier: "SupCatCell")
@@ -83,6 +84,16 @@ tableview.tableFooterView = UIView()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if navigationItem.title=="Create Ad"{
+            SupCategoryName=SupCatData[indexPath.row].name
+            let IsNew = SupCatData[indexPath.row].new
+            print(IsNew,"IsNew")
+            if IsNew==1{
+               New = 1
+                
+            }
+            else{
+                New = 0
+            }
             RootView.toChoosePhotoVC(withVC: self, title: "Create Ad")
         }
         else{
@@ -96,4 +107,7 @@ tableview.tableFooterView = UIView()
         return 60
     }
 
+    @IBAction func Btninish(_ sender: UIButton) {
+        
+    }
 }

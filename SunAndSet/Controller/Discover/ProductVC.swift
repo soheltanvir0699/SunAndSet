@@ -13,7 +13,7 @@ class ProductVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var HieghtOfTableView: NSLayoutConstraint!
      @IBOutlet weak var ViewSliderBanner: ImageSlideshow!
     var  SupCatId:Int?
-     var  UserId:Int?
+    
     var SliderData = [advertiseModel.slider]()
     var CatProData = [advertiseModel.Cate]()
     var IndexSlectedBanner:Int = -1
@@ -28,22 +28,14 @@ class ProductVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         self.tableview.register(nib, forCellReuseIdentifier: "ProductCell")
         CustomeImageSlideshow()
         // source Sup categorey
-        if SupCatId != nil{
-            print("SupCatId")
-             getProByIDData(ParameterKey:"categoryId",parameter:SupCatId!)
-        }
-            // source Sup Descripe Pro
-        else{ print("userId")
-            getProByIDData(ParameterKey:"userId",parameter:2)
-        }
+        getProByCatIDData()
     }
     var isLoading: Bool = false
-    func getProByIDData(ParameterKey:String,parameter:Int){
+    func getProByCatIDData(){
         guard !isLoading else { return }
         isLoading = true
         showLoading()
-        print(parameter,"parameter")
-        CategoeryService.getProById(parameterKey:ParameterKey,Id: parameter){ (error: String?,success: Bool,catpros:[advertiseModel.Cate]?,sliders:[advertiseModel.slider]?)in
+        AdsService.getProByCatID(Id: SupCatId!){ (error: String?,success: Bool,catpros:[advertiseModel.Cate]?,sliders:[advertiseModel.slider]?)in
             if let error = error{self.hideLoading()
                 self.alertUser(title: "", message: error )
                 return
@@ -117,9 +109,10 @@ class ProductVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @objc func btnFavouriteAction(sender: UIButton){
         let buttonTag = sender.tag
          let IdPro = CatProData[buttonTag].id
-        if  UsersDefault.userIsLogged==false{
+        if  UsersDefault.userIsLogged==false
+        {
         print(IdPro)
-        if  Defualts.insertPro(name: "omar", price:0.5, Qte:1,image:"om",id:IdPro){
+        if  Defualts.insertPro(id:IdPro){
             print("omaerf")
             sender.setImage(UIImage(named: "savedCard"), for: UIControlState())
 

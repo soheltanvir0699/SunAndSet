@@ -99,5 +99,18 @@ class UsersDefault: NSObject {
         print("token: ", UsersDefault.Token)
         print("////******************////\n")
     }
+   class  func deleteUserDataFromUSerDefaults(){
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: Constants.Key.userIsLogged)
+        
+        defaults.removeObject(forKey: Constants.Key.userId)
+        defaults.removeObject(forKey: Constants.Key.userName)
+        defaults.removeObject(forKey: Constants.Key.userEmail)
+        defaults.removeObject(forKey: Constants.Key.userMobile)
+        defaults.removeObject(forKey: Constants.Key.token)
+        defaults.removeObject(forKey: Constants.Key.userCountryCode)
+        defaults.synchronize()
+    }
+    
 }
 

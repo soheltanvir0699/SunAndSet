@@ -52,7 +52,7 @@
                                                     <action selector="SendCode:" destination="dIW-VB-BOd" eventType="touchUpInside" id="L0j-Q3-cum"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PHONE OR EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-oC-RgA" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PHONE NUMBER" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-oC-RgA" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="33" y="172" width="318" height="37"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -69,33 +69,46 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="KXc-VZ-VRi">
-                                                <rect key="frame" x="33" y="225" width="20" height="20"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bto-II-JTP">
+                                                <rect key="frame" x="33" y="225" width="318" height="20"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="YBL-y8-c8i">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="3ih-tS-87o"/>
+                                                            <constraint firstAttribute="width" constant="20" id="MCc-iw-Qcr"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmD-wp-HK6">
+                                                        <rect key="frame" x="27" y="0.0" width="157" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                                        <color key="textColor" red="0.88191252949999999" green="0.47984987499999998" blue="0.47919106480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="BNe-w1-aF0"/>
-                                                    <constraint firstAttribute="width" constant="20" id="O1k-IT-Szt"/>
+                                                    <constraint firstItem="YBL-y8-c8i" firstAttribute="top" secondItem="bto-II-JTP" secondAttribute="top" id="Bsz-up-f7v"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YBL-y8-c8i" secondAttribute="bottom" id="Edb-37-tu1"/>
+                                                    <constraint firstItem="YBL-y8-c8i" firstAttribute="leading" secondItem="bto-II-JTP" secondAttribute="leading" id="FhO-n1-pKf"/>
+                                                    <constraint firstItem="GmD-wp-HK6" firstAttribute="centerY" secondItem="YBL-y8-c8i" secondAttribute="centerY" id="a1e-TN-Skp"/>
+                                                    <constraint firstItem="GmD-wp-HK6" firstAttribute="leading" secondItem="YBL-y8-c8i" secondAttribute="trailing" constant="7" id="eYc-Mw-rIf"/>
+                                                    <constraint firstAttribute="height" constant="20" id="jnW-9B-Ado"/>
                                                 </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6h-Hf-BAT">
-                                                <rect key="frame" x="60" y="225" width="157" height="20.5"/>
-                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
-                                                <color key="textColor" red="0.88191252946853638" green="0.47984987497329712" blue="0.47919106483459473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="KXc-VZ-VRi" firstAttribute="top" secondItem="qgN-oC-RgA" secondAttribute="bottom" constant="16" id="4Mu-QL-C1P"/>
-                                            <constraint firstItem="A6h-Hf-BAT" firstAttribute="centerY" secondItem="KXc-VZ-VRi" secondAttribute="centerY" id="4W8-NX-p4d"/>
+                                            <constraint firstItem="bto-II-JTP" firstAttribute="trailing" secondItem="qgN-oC-RgA" secondAttribute="trailing" id="8fR-Ck-Pq4"/>
                                             <constraint firstAttribute="height" constant="667" id="MGz-va-ouO"/>
-                                            <constraint firstItem="KXc-VZ-VRi" firstAttribute="leading" secondItem="qgN-oC-RgA" secondAttribute="leading" id="ScF-T5-gU5"/>
                                             <constraint firstItem="qgN-oC-RgA" firstAttribute="leading" secondItem="lSX-RY-xSw" secondAttribute="leading" constant="33" id="Typ-FC-u1v"/>
+                                            <constraint firstItem="bto-II-JTP" firstAttribute="top" secondItem="qgN-oC-RgA" secondAttribute="bottom" constant="16" id="YP4-S2-WIa"/>
                                             <constraint firstAttribute="trailing" secondItem="qgN-oC-RgA" secondAttribute="trailing" constant="24" id="aB7-rN-UZB"/>
                                             <constraint firstItem="qgN-oC-RgA" firstAttribute="top" secondItem="Ee7-Xg-O1b" secondAttribute="bottom" constant="72" id="hn1-tf-4sw"/>
                                             <constraint firstItem="3So-uL-Rc8" firstAttribute="centerX" secondItem="lSX-RY-xSw" secondAttribute="centerX" id="hu7-Kg-htf"/>
-                                            <constraint firstItem="A6h-Hf-BAT" firstAttribute="leading" secondItem="KXc-VZ-VRi" secondAttribute="trailing" constant="7" id="ist-Cz-WcC"/>
                                             <constraint firstItem="Ee7-Xg-O1b" firstAttribute="centerX" secondItem="lSX-RY-xSw" secondAttribute="centerX" id="ps9-fo-mbg"/>
                                             <constraint firstItem="Ee7-Xg-O1b" firstAttribute="top" secondItem="lSX-RY-xSw" secondAttribute="top" constant="38" id="rUj-Xt-Dq9"/>
+                                            <constraint firstItem="bto-II-JTP" firstAttribute="leading" secondItem="qgN-oC-RgA" secondAttribute="leading" id="wLd-fa-ilk"/>
                                             <constraint firstItem="3So-uL-Rc8" firstAttribute="top" secondItem="qgN-oC-RgA" secondAttribute="bottom" constant="141" id="xoM-t8-WcG"/>
                                         </constraints>
                                     </view>
@@ -120,6 +133,8 @@
                     </view>
                     <connections>
                         <outlet property="SendCode" destination="3So-uL-Rc8" id="XbC-Bl-m3Z"/>
+                        <outlet property="ViewErrorPhone" destination="bto-II-JTP" id="sA7-xx-MwP"/>
+                        <outlet property="txtPhone" destination="qgN-oC-RgA" id="wdB-Yo-uEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJK-81-Lf3" sceneMemberID="firstResponder"/>

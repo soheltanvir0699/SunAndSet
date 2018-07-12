@@ -142,11 +142,11 @@ class AuthenticationService: NSObject {
             "device_id"         : device_id,
             "device_model"        : UIDevice.modelName,
             "firebase_token"    : "22",
-           // "password"            : password,
+           "password"            : password,
             
             ]
         
-        let headers = RequestComponent.headerComponent([.content, .version, .platform])
+        let headers = RequestComponent.headerComponent([.version, .platform])
         print(url)
         Alamofire.request(url, method: .post, parameters:parameters, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
@@ -154,7 +154,7 @@ class AuthenticationService: NSObject {
                 switch response.result
                 {
                 case .failure(let error):
-                    completion("No Internet Connection",false)
+                    completion(error.localizedDescription,false)
                     print(error,"error")
                 case .success:
                     let data = response.data

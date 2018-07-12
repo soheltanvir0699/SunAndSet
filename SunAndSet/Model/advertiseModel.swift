@@ -13,7 +13,8 @@ struct advertiseModel: Decodable {
      var slider: [slider]?
     struct slider: Decodable {
         var image: String
-      
+         var advertising_id: Int
+     
     }
     struct Cate: Decodable {
         var id: Int
@@ -28,6 +29,9 @@ struct advertiseModel: Decodable {
         var created_at: String? = ""
         var updated_at: String?
         var city:City
+        var isFave: Bool
+         var cat_parent_name: String
+        
          var user:User
         var category:HomeModel.Cate
          var images:[HomeModel.image]

@@ -13,7 +13,9 @@ class MoreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var SectionsLogin = ["My Info","Control","Other"]
     var SectionsNotLogin = ["Join Sun & Sat","Already have an account?","Other"]
     var TitleNotLogin = [["Create New Accoun"],["Login"],["About App","Contact Us","Terms of Service","About Developers"]]
-    var TitleLogin = [["omar"],["My Ads"],["About App","Contact Us","Terms of Service","About Developers","Log Out"]]
+  let userName = UsersDefault.userName
+    
+    var TitleLogin = [["\(UsersDefault.userName)"],["My Ads"],["About App","Contact Us","Terms of Service","About Developers","Log Out"]]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +88,79 @@ class MoreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
 
 }
+    func ShowPopUp(){
+        _ = UINib.init(nibName: "LogOut", bundle: nil)
+        //self.view.register(nib, forCellReuseIdentifier: "SupViewConnectUs")
+        let rootView = Bundle.main.loadNibNamed("LogOut", owner: self, options: nil)?[0] as? LogOut
+        rootView?.BtnClose.addTarget(self, action: #selector(dismissSupView), for: .touchUpInside)
+         rootView?.BtnLogin.addTarget(self, action: #selector(GoToLoginView), for: .touchUpInside)
+         rootView?.BtnCancel.addTarget(self, action: #selector(dismissSupView), for: .touchUpInside)
+        if let aView = rootView {
+            aView.tag = 100
+            self.navigationController?.view.addSubview(aView)
+            guard let navView = self.navigationController?.view else {return}
+            navView.addSubview(aView)
+            aView.translatesAutoresizingMaskIntoConstraints = false
+            aView.topAnchor.constraint(equalTo: navView.topAnchor, constant: 0).isActive = true
+            aView.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 0).isActive = true
+            aView.leadingAnchor.constraint(equalTo: navView.leadingAnchor, constant: 0).isActive = true
+            aView.trailingAnchor.constraint(equalTo: navView.trailingAnchor, constant: 0).isActive = true
+         
+            
+            
+        }}
+    @objc func dismissSupView() {
+        for subview in (self.navigationController?.view.subviews)! {
+            if (subview.tag == 100) {
+                subview.removeFromSuperview()
+            }
+        }
+       
+    }
+    @objc func GoToLoginView() {
+       // UsersDefault.deleteUserDataFromUSerDefaults()
+        for subview in (self.navigationController?.view.subviews)! {
+            if (subview.tag == 100) {
+                subview.removeFromSuperview()
+            }
+        }
+       UsersDefault.deleteUserDataFromUSerDefaults()
+        RootView.toLoginVC(withVC: self, title: "Login")
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+        if UsersDefault.userIsLogged==true{
+            UserISlogged(indexPath:indexPath)
+           print(indexPath)
+            print(indexPath.section,"indexPath.section")
+            print(indexPath.row,"indexPath.row")
+            
+        }
+        else{
+            UserISloggedFalse(indexPath:indexPath)
+        }
+    }
+    func UserISlogged(indexPath:IndexPath){
+        if indexPath == [2, 4]{
+            ShowPopUp()
+        }
+        if indexPath == [0, 0]{
+            RootView.toEditProfileVC(withVC: self, title: "My Profile")
+            
+        }
+        if indexPath == [1, 0]{
+            let userID =  UsersDefault.userId
+            RootView.toListOffAdsUsersVC(withVC: self, title: userName, UserID: userID)
+        }
+        
+    }
+    func UserISloggedFalse(indexPath:IndexPath){
+        if indexPath == [0, 0]{
+             RootView.toRegisterVC(withVC: self, title: "Register")
+        }
+        else if indexPath == [1, 0]{
+            RootView.toLoginVC(withVC: self, title: "Login")
+        }
     }
 }
 

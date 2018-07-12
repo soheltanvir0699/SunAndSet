@@ -89,8 +89,9 @@ class OfferVC: MainViewController,UICollectionViewDataSource,UICollectionViewDel
                  return
             }
             print("success5")
+            self.CollectionViewOffer.dataSource=self
             if let offer = offers{
-            self.OfferData = offer
+            self.OfferData.append(contentsOf: offer)
             }
             if let last = lastPage{
                 self.lastpage = last
@@ -146,8 +147,11 @@ return setupMenuCateOfferCollectionView(collectionView, cellForItemAt: indexPath
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView==CollectionViewCat{
+            
+            CollectionViewOffer.dataSource=nil
+            CollectionViewOffer.reloadData()
             //Remove Sup view
-            for subview in self.CollectionViewOffer.subviews {
+            for subview in self.view.subviews {
             if (subview.tag == 100) {
                 print("Hussnien")
                 subview.removeFromSuperview()

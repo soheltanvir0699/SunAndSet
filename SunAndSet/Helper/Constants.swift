@@ -46,6 +46,7 @@ class Constants: NSObject {
          static let categories = baseUrl + "categories"
          static let SupCat = baseUrl + "category/"
          static let CatPro = baseUrl + "advertise"
+        static let CreateAd = baseUrl + "advertise"
         static let AllCat = baseUrl + "category/0"
         static let AllOfferByCat = baseUrl + "offers/"
        // http://sunandsat.mtech-ins.com/api/v1/offers/4
@@ -69,6 +70,7 @@ class Constants: NSObject {
         static let NotLoginVC = "NotLoginVC"
         static let MainViewVC = "MainView"
         static let ChoosePhotoVC = "ChoosePhotoVC"
+          static let DetailsCreateAdVC = "DetailsCreateAdVC"
         static let SeeMoreHotDealsTB = "SeeMoreHotDealsTB"
         static let SeeMorePopulerNowTB = "SeeMorePopulerNowTB"
         static let SeeMoreGroceriesTB = "SeeMoreGroceriesTB"
