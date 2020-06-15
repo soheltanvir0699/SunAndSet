@@ -16,10 +16,8 @@ class DescripProVC: UIViewController {
      @IBOutlet weak var ViewSliderBanner: ImageSlideshow!
     var IndexSlectedBanner:Int = -1
     var  SingelItem:advertiseModel.Cate?
-    var MyAds:Bool=false
-    var ImageName:String?
     @IBOutlet weak var lblNameOwner: UILabel!
-    var btnRightLove: UIButton = UIButton()
+    var btnRight: UIButton = UIButton()
     var isLoved :Bool = false
     @IBOutlet weak var txtDes: UITextView!
     @IBOutlet weak var lblNumViewier: UILabel!
@@ -33,22 +31,32 @@ class DescripProVC: UIViewController {
     @IBOutlet weak var lblCat: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        isLoved = false
-        MyAds = false
-        if MyAds == false{
-            if isLoved == false{
-                ImageName = "saveCard"
-                btnRightLove.setImage(UIImage(named: "saveCard"), for: UIControlState())
-                isLoved = true
+       
+        
+        if SingelItem?.user_id != SingelItem?.user?.id{
+            if SingelItem?.isFave==false{
+                // Not Favorite
+                btnRight.setImage(UIImage(named: "saveCard"), for: UIControlState())
+                
             }
-            else{ImageName = "savedCard"
+                 //  Favorited
+            else{
+                btnRight.setImage(UIImage(named: "savedCard"), for: UIControlState())
             }
-            SetBarButtonStatus(ImageName!,action1: LoveAction)
+            btnRight.addTarget(self, action: #selector(DescripProVC.LoveAction), for: UIControlEvents.touchUpInside)
+            btnRight.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+            let barButton = UIBarButtonItem(customView: btnRight)
+            self.navigationItem.rightBarButtonItem = barButton
+           
         }
+            // user onwer ADS
         else{
-            SetBarButtonStatus("edit",action1: dismissSupView )
+            btnRight.setImage(UIImage(named: "edit"), for: UIControlState())
+        btnRight.addTarget(self, action: #selector(DescripProVC.EditADSAction), for: UIControlEvents.touchUpInside)
+        btnRight.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: btnRight)
+        self.navigationItem.rightBarButtonItem = barButton
             ViewReport.isHidden=true
-            
             
         }
        // fill Data
@@ -60,16 +68,16 @@ class DescripProVC: UIViewController {
         { lblNumViewier.text = String(priNumViewerce)
         }
         
-        lblCat.text = SingelItem?.category.name
+        lblCat.text = (SingelItem?.category.name)! + "." + (SingelItem?.cat_parent_name.name)!
          txtDes.text = SingelItem?.description
-        lblNameOwner.text = SingelItem?.user.name
+        lblNameOwner.text = SingelItem?.user?.name
         if let DesOwner = SingelItem?.created_at
         { lblDesOwner.text = "Posted this product on " + DesOwner
         }
         else{lblDesOwner.text = "Posted this product on "}
         lblDescrip.text = SingelItem?.name
        ImageOwener.addImage(withImage: nil, andPlaceHolder: "Placeholder")
-        print(SingelItem,"SingelItem")
+        print(SingelItem!,"SingelItem")
         lblLocation.text = (SingelItem?.area.name)!+" , " + (SingelItem?.city.name)!
         NotificationCenter.default.addObserver(self, selector: #selector(self.dismissSupView), name: NSNotification.Name(rawValue:"dismissSupView"), object: nil)
        CustomeImageSlideshow()
@@ -118,37 +126,38 @@ class DescripProVC: UIViewController {
         }
         self.tabBarController?.tabBar.isHidden=false
     }
-    func SetBarButtonStatus(_ ImageName:String,action1: @escaping () -> Void)
-    {
-        if isLoved == false{
-            btnRightLove.setImage(UIImage(named: "ImageName"), for: UIControlState())
-             isLoved = true
+   
+    @objc func LoveAction(){
+        showLoading()
+        FavouriteService.AddFavourite(ProductId:  (SingelItem?.id)!) { (error: String?, success: Bool) in
+            if success {
+                self.hideLoading()
+                if ResultString == "favorited"{
+                    self.btnRight.setImage(UIImage(named: "savedCard"), for: UIControlState())
+                }
+                else{ self.btnRight.setImage(UIImage(named: "saveCard"), for: UIControlState())}
+                
+            }
+            else  {self.hideLoading()
+                print(Error.self)
+                self.alertUser(title: "", message: error! )
+            }
+            
         }
-        else{btnRightLove.setImage(UIImage(named: "savedCard"), for: UIControlState())
-            isLoved = false
-        }
-        btnRightLove.addTarget(self, action: Selector("LoveAction"), for: UIControlEvents.touchUpInside)
-        btnRightLove.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        let barButton = UIBarButtonItem(customView: btnRightLove)
-        self.navigationItem.rightBarButtonItem = barButton
+        
         
     }
-    @objc func LoveAction(){
-        print("oh")
-        if isLoved == false{
-            btnRightLove.setImage(UIImage(named: "saveCard"), for: UIControlState())
-             isLoved = true
-        }
-        else{btnRightLove.setImage(UIImage(named: "savedCard"), for: UIControlState())
-             isLoved = false
-        }
+    @objc func EditADSAction(){
+       
+            
+        print("GoToEditProfile")
         
         
     }
     @IBAction func BtnGotoOwenerDetails(_ sender: UIButton) {
         
-        let userId = SingelItem?.user.id
-         let userName = SingelItem?.user.name
+        let userId = SingelItem?.user?.id
+        let userName = SingelItem?.user?.name
         RootView.toListOffAdsUsersVC(withVC: self, title: userName!, UserID: userId!)
        
         
@@ -172,8 +181,8 @@ class DescripProVC: UIViewController {
     @IBAction func BtnConectUs(_ sender: Any) {
         print("omar")
         let rootView = Bundle.main.loadNibNamed("SupViewConnectUs", owner: self, options: nil)?[0] as? SupViewConnectUs
-        rootView?.lblName.text = SingelItem?.user.name
-        if let PhomeNum = SingelItem?.user.mobile
+        rootView?.lblName.text = SingelItem?.user?.name
+        if let PhomeNum = SingelItem?.user?.mobile
         { rootView?.lblPhomeNum.text = String(PhomeNum)
         }
         rootView?.BtnCall.addTarget(self, action: #selector(BtnCall), for: .touchUpInside)
@@ -192,7 +201,7 @@ class DescripProVC: UIViewController {
         }
     }
     @IBAction func BtnCall(_ sender: Any) {
-        guard let PhomeNum = SingelItem?.user.mobile else{return}
+        guard let PhomeNum = SingelItem?.user?.mobile else{return}
         let Num = String(PhomeNum)
         if let url = URL(string: "tel://\(Num)"),
             UIApplication.shared.canOpenURL(url) {

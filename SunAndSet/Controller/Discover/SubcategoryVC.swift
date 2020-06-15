@@ -8,7 +8,9 @@
 
 import UIKit
 var New = -1
+var CategoeryId = -1
 class SubcategoryVC: UIViewController,UITableViewDataSource,UITableViewDelegate  {
+    var ValueComeFrorm = -1
     
     @IBOutlet weak var tableViewHieght: NSLayoutConstraint!
     @IBOutlet weak var tableview: UITableView!
@@ -83,9 +85,11 @@ tableview.tableFooterView = UIView()
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if navigationItem.title=="Create Ad"{
+        // if value Equel 1 goto choosePhotoVC
+        if ValueComeFrorm == 1{
             SupCategoryName=SupCatData[indexPath.row].name
             let IsNew = SupCatData[indexPath.row].new
+             CategoeryId = SupCatData[indexPath.row].id
             print(IsNew,"IsNew")
             if IsNew==1{
                New = 1
@@ -96,6 +100,21 @@ tableview.tableFooterView = UIView()
             }
             RootView.toChoosePhotoVC(withVC: self, title: "Create Ad")
         }
+            // if value Equel 2 goto toDetailsCreate
+       else if ValueComeFrorm == 2{
+            SupCategoryName=SupCatData[indexPath.row].name
+            let IsNew = SupCatData[indexPath.row].new
+            print(IsNew,"IsNew")
+            if IsNew==1{
+                New = 1
+                
+            }
+            else{
+                New = 0
+            }
+            RootView.toDetailsCreateAdVC(withVC: self, title: "Create Ad")
+        }
+            // if value Equel 0 goto product view
         else{
         //let indexPath = collectionView.indexPathsForSelectedItems
         let currentCell = tableView.cellForRow(at: indexPath) as! SupCatCell

@@ -8,6 +8,8 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+ var myImages = [UIImage]()
+var NameOfAds = ""
 class ChoosePhotoVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 var imagePicker=UIImagePickerController()
     @IBOutlet weak var CollectionVewPhoto: UICollectionView!
@@ -15,7 +17,7 @@ var imagePicker=UIImagePickerController()
     @IBOutlet weak var txtTitle: SkyFloatingLabelTextField!
     
     @IBOutlet weak var ImageToselected: UIImageView!
-    var myImages = [UIImage]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         SetBackBarButton()
@@ -57,6 +59,9 @@ BtnNext.layer.cornerRadius = 4
         }
     }
     @objc func DiscrdBtnAction(){
+    myImages = [UIImage]()
+        NameOfAds = ""
+        
         for subview in (self.navigationController?.view.subviews)! {
             if (subview.tag == 100) {
                 subview.removeFromSuperview()
@@ -73,7 +78,7 @@ BtnNext.layer.cornerRadius = 4
       
     }
     @IBAction func BtnNext(_ sender: UIButton) {
-        guard   let mobile = txtTitle.text?.trimmed, !mobile.isEmpty
+        guard   let Title = txtTitle.text?.trimmed, !Title.isEmpty
             else  {
                 alertUser(title: "", message: "please fill Title field")
                 return
@@ -83,6 +88,7 @@ BtnNext.layer.cornerRadius = 4
             
         }
         else{
+            NameOfAds=Title
             RootView.toDetailsCreateAdVC(withVC: self, title: "Create Ad")}
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

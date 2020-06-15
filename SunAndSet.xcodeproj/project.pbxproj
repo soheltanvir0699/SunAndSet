@@ -25,6 +25,11 @@
 		CE0E864320D28A6000629F70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E864220D28A6000629F70 /* Extensions.swift */; };
 		CE0E864520D28A7A00629F70 /* Defualts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E864420D28A7A00629F70 /* Defualts.swift */; };
 		CE0E864720D28A9F00629F70 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E864620D28A9F00629F70 /* Constants.swift */; };
+		CE13923520FD179E00FEF447 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE13923420FD179E00FEF447 /* LocationCell.xib */; };
+		CE13923720FD17B200FEF447 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13923620FD17B200FEF447 /* LocationCell.swift */; };
+		CE13923920FD1C6E00FEF447 /* CitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13923820FD1C6E00FEF447 /* CitiesVC.swift */; };
+		CE13923B20FD2E3200FEF447 /* CitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13923A20FD2E3200FEF447 /* CitiesModel.swift */; };
+		CE13923D20FD2EF900FEF447 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13923C20FD2EF900FEF447 /* AreaModel.swift */; };
 		CE1643EC20ECE16200797BBF /* FavouriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1643EB20ECE16200797BBF /* FavouriteService.swift */; };
 		CE1643EE20ED4EBC00797BBF /* FavouriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1643ED20ED4EBC00797BBF /* FavouriteModel.swift */; };
 		CE1643F020ED598C00797BBF /* CreateAddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1643EF20ED598C00797BBF /* CreateAddModel.swift */; };
@@ -105,6 +110,11 @@
 		CE0E864220D28A6000629F70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CE0E864420D28A7A00629F70 /* Defualts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defualts.swift; sourceTree = "<group>"; };
 		CE0E864620D28A9F00629F70 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE13923420FD179E00FEF447 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		CE13923620FD17B200FEF447 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		CE13923820FD1C6E00FEF447 /* CitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesVC.swift; sourceTree = "<group>"; };
+		CE13923A20FD2E3200FEF447 /* CitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesModel.swift; sourceTree = "<group>"; };
+		CE13923C20FD2EF900FEF447 /* AreaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaModel.swift; sourceTree = "<group>"; };
 		CE1643EB20ECE16200797BBF /* FavouriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteService.swift; sourceTree = "<group>"; };
 		CE1643ED20ED4EBC00797BBF /* FavouriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModel.swift; sourceTree = "<group>"; };
 		CE1643EF20ED598C00797BBF /* CreateAddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAddModel.swift; sourceTree = "<group>"; };
@@ -281,6 +291,8 @@
 				CE2178BB20EA888400E3EF73 /* OfferModel.swift */,
 				CE1643ED20ED4EBC00797BBF /* FavouriteModel.swift */,
 				CE1643EF20ED598C00797BBF /* CreateAddModel.swift */,
+				CE13923A20FD2E3200FEF447 /* CitiesModel.swift */,
+				CE13923C20FD2EF900FEF447 /* AreaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				CE6A3DA020F3D61B00FFADAB /* PhotoCell.swift */,
+				CE13923420FD179E00FEF447 /* LocationCell.xib */,
+				CE13923620FD17B200FEF447 /* LocationCell.swift */,
 			);
 			path = CreatAd;
 			sourceTree = "<group>";
@@ -424,6 +438,7 @@
 				CE87136B20D8FAE800A8A980 /* CreateAdVC.swift */,
 				CEDC735A20EE40C9005AD290 /* ChoosePhotoVC.swift */,
 				CEFF630A20EE452B00684D1F /* DetailsCreateAdVC.swift */,
+				CE13923820FD1C6E00FEF447 /* CitiesVC.swift */,
 			);
 			path = CreateAd;
 			sourceTree = "<group>";
@@ -493,6 +508,7 @@
 				CE87135720D8E91500A8A980 /* Localizable.strings in Resources */,
 				CE0E863520D2842400629F70 /* LaunchScreen.storyboard in Resources */,
 				CE46325B20DBF7A600BBB4DA /* SupViewConnectUs.xib in Resources */,
+				CE13923520FD179E00FEF447 /* LocationCell.xib in Resources */,
 				CE87136520D8F23000A8A980 /* OpenSans-ExtraBold.ttf in Resources */,
 				CEC00FF720F4AC15002A3216 /* LogOut.xib in Resources */,
 				CE87136420D8F23000A8A980 /* OpenSans-Bold.ttf in Resources */,
@@ -601,6 +617,8 @@
 				CE46325320DBAEBD00BBB4DA /* DescripProVC.swift in Sources */,
 				CECFA17820E2798400C33F92 /* ForgetPassword.swift in Sources */,
 				CE1643EC20ECE16200797BBF /* FavouriteService.swift in Sources */,
+				CE13923720FD17B200FEF447 /* LocationCell.swift in Sources */,
+				CE13923B20FD2E3200FEF447 /* CitiesModel.swift in Sources */,
 				CE87136E20D8FB0B00A8A980 /* FavoriteVC.swift in Sources */,
 				CE0E862D20D2842000629F70 /* ViewController.swift in Sources */,
 				CE039FEA20E1120B00C728FD /* Categories.swift in Sources */,
@@ -637,6 +655,7 @@
 				CE2F288320DA8752008E6F1F /* SupCatCell1.swift in Sources */,
 				CE1643EE20ED4EBC00797BBF /* FavouriteModel.swift in Sources */,
 				CE87137320D939F800A8A980 /* CatCell.swift in Sources */,
+				CE13923920FD1C6E00FEF447 /* CitiesVC.swift in Sources */,
 				CE87136C20D8FAE800A8A980 /* CreateAdVC.swift in Sources */,
 				CEDC735B20EE40C9005AD290 /* ChoosePhotoVC.swift in Sources */,
 				CE0E864320D28A6000629F70 /* Extensions.swift in Sources */,
@@ -646,6 +665,7 @@
 				CEA70F1720E3D09A00C73A1B /* advertiseModel.swift in Sources */,
 				CE87137020D8FB2500A8A980 /* MoreVC.swift in Sources */,
 				CE2F287B20DA6FFF008E6F1F /* Helper.swift in Sources */,
+				CE13923D20FD2EF900FEF447 /* AreaModel.swift in Sources */,
 				CE039FEE20E11BC600C728FD /* RequestManger.swift in Sources */,
 				CE039FE820E1086200C728FD /* RegisterVC.swift in Sources */,
 				CED7620520E4E7A1004CC423 /* AuthenticationService.swift in Sources */,

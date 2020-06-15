@@ -138,16 +138,8 @@ class HomeVC: MainViewController,UICollectionViewDataSource,UICollectionViewDele
         let currentCell = collectionView.cellForItem(at: indexPath) as! CatCell
         let title =  currentCell.lblCat.text!
         let  CatId = CategoriesData[indexPath.row].id
-        RootView.toSubcategoryVC(withVC: self, title: title,CatId:CatId)
+        RootView.toSubcategoryVC(withVC: self, title: title,CatId:CatId,ValueComeFrorm: 0)
        
     }
-        
-        
-        
     
-    
-    
-
-    
-
 }

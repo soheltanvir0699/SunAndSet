@@ -30,15 +30,19 @@ struct advertiseModel: Decodable {
         var updated_at: String?
         var city:City
         var isFave: Bool
-         var cat_parent_name: String
+         var cat_parent_name: cat_parent_name
         
-         var user:User
+         var user:User?
         var category:HomeModel.Cate
          var images:[HomeModel.image]
           var area:area
     }
     struct City: Decodable{
          var name: String
+        
+    }
+    struct cat_parent_name: Decodable{
+        var name: String
         
     }
     struct User: Decodable{
@@ -108,3 +112,5 @@ struct advertiseModel: Decodable {
 //    "limit": 10,
 //    "count": 1
 //}
+
+

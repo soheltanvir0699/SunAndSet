@@ -15,6 +15,9 @@ struct HomeModel: Decodable {
         var id: Int
         var image: String?
         var advertising_id: Int?
+        var created_at: String?
+        var updated_at: String?
+      
     }
         
         struct Cate: Decodable {

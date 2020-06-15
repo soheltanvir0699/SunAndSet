@@ -36,7 +36,7 @@ class Constants: NSObject {
         
     }
     struct Urls {
-        static let baseUrl = "http://sunandsat.mtech-ins.com/api/v1/"
+        static let baseUrl = "http://sunandsat.supplement-app.net/api/v1/"
         static let loginUrl = baseUrl + "login"
         static let signUpUrl = baseUrl + "signup"
         static let ForgetPassUrl = baseUrl + "forget"
@@ -49,6 +49,7 @@ class Constants: NSObject {
         static let CreateAd = baseUrl + "advertise"
         static let AllCat = baseUrl + "category/0"
         static let AllOfferByCat = baseUrl + "offers/"
+         static let Cities = baseUrl + "cities"
        // http://sunandsat.mtech-ins.com/api/v1/offers/4
     }
     struct StoryBoardViewControllersIDs {
@@ -70,7 +71,9 @@ class Constants: NSObject {
         static let NotLoginVC = "NotLoginVC"
         static let MainViewVC = "MainView"
         static let ChoosePhotoVC = "ChoosePhotoVC"
-          static let DetailsCreateAdVC = "DetailsCreateAdVC"
+        static let DetailsCreateAdVC = "DetailsCreateAdVC"
+         static let CreateAdVC = "CreateAdVC"
+        
         static let SeeMoreHotDealsTB = "SeeMoreHotDealsTB"
         static let SeeMorePopulerNowTB = "SeeMorePopulerNowTB"
         static let SeeMoreGroceriesTB = "SeeMoreGroceriesTB"

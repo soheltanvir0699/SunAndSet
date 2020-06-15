@@ -13,18 +13,27 @@ class CreateAdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var tableViewHieght: NSLayoutConstraint!
     @IBOutlet weak var tableview: UITableView!
     var AllCateData = [OfferModel.Cate]()
+    var IsMenuChoose = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //RootView.toLoginVC(withVC: self, title: "Login")
           navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         if UsersDefault.userIsLogged==true{
-        self.navigationItem.title = "Create Ad"
+            // View As menu choose Cat
+            if IsMenuChoose == true{
+                
+            }
+            else{
+                self.navigationItem.title = "Create Ad"
+            }
         tableview.tableFooterView = UIView()
         let nib = UINib.init(nibName: "SupCat", bundle: nil)
         self.tableview.register(nib, forCellReuseIdentifier: "SupCatCell")
-            getAllCatData()}
-}
+                getAllCatData()}
+        
+        }
+
     override func viewWillAppear(_ animated: Bool) {
         //user Not login
         if  UsersDefault.userIsLogged==false{
@@ -88,7 +97,13 @@ class CreateAdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         //let indexPath = collectionView.indexPathsForSelectedItems
         let CatId = AllCateData[indexPath.row].id
         CategoryName=AllCateData[indexPath.row].name
-         RootView.toSubcategoryVC(withVC: self, title: "Create Ad",CatId:CatId)
+        if IsMenuChoose == true{
+              RootView.toSubcategoryVC(withVC: self, title: "ChooseSupcategoery ",CatId:CatId,ValueComeFrorm: 2)
+        }
+        else{
+            RootView.toSubcategoryVC(withVC: self, title: "Create Ad",CatId:CatId,ValueComeFrorm: 1)
+        }
+       
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

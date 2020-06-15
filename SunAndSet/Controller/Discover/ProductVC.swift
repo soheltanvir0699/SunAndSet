@@ -98,6 +98,7 @@ class ProductVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         cell.lblPrice.text = String(CatProData[indexPath.row].price)+" ₺"
         cell.ImagePro.addImage(withImage: CatProData[indexPath.row].category.image, andPlaceHolder: "Placeholder")
+        print(CatProData[indexPath.row].category.image!,"image")
           cell.lblKind.text = "["+CatProData[indexPath.row].status+"]"
          cell.lblDetail.text = CatProData[indexPath.row].name
         cell.lblLocation.text = CatProData[indexPath.row].area.name+" , "+CatProData[indexPath.row].city.name

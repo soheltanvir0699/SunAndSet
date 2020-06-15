@@ -26,6 +26,15 @@ class RootView: NSObject {
            destination.hidesBottomBarWhenPushed = true
         vc.navigationController?.pushViewController(destination, animated: true)
     }
+    class func toCreateAdVC(withVC vc: UIViewController,title:String){
+        let StoryBoardID = Constants.StoryBoardViewControllersIDs.CreateAdVC
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! CreateAdVC
+        destination.title =  title
+        destination.IsMenuChoose=true
+        destination.navigationItem.setHidesBackButton(true, animated:true)
+        vc.navigationController?.pushViewController(destination, animated: true)
+    }
     class func toProductVC(withVC vc: UIViewController,title:String,SupCat:Int){
         let StoryBoardID = Constants.StoryBoardViewControllersIDs.ProductVC
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -67,12 +76,13 @@ class RootView: NSObject {
         destination.title =  title
         vc.navigationController?.pushViewController(destination, animated: true)
     }
-    class func toSubcategoryVC(withVC vc: UIViewController,title:String,CatId:Int) {
+    class func toSubcategoryVC(withVC vc: UIViewController,title:String,CatId:Int,ValueComeFrorm:Int) {
         let StoryBoardID = Constants.StoryBoardViewControllersIDs.SubcategoryVC
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(withIdentifier: StoryBoardID) as! SubcategoryVC
         destination.title =  title
         destination.CatId=CatId
+        destination.ValueComeFrorm = ValueComeFrorm
         vc.navigationController?.pushViewController(destination, animated: true)
        
     }
